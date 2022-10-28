@@ -9,10 +9,6 @@ describe("Animals", () => {
   });
 
   describe("simple datasets", () => {
-    beforeEach(() => {
-      dataset = animalDatasetRepo.simple;
-    });
-
     it("should return a number of animal names with given letter number", () => {
       // Write anilizeWords function returning a number of names
       // that contains given letter number
@@ -72,6 +68,32 @@ describe("Animals", () => {
         w: ["Wolf"],
         z: ["Zebra"],
       });
+    });
+  });
+
+  describe("array of objects database", () => {
+    it("should return an array with with all animals in given zoo", () => {
+      // Write getAnimalInZoo function returning an array
+      // with all animal names in given zoo
+      // if given Denver Zoo it should return
+      // ["Coco", "Pinguini", "BonBon"]
+
+      const resultDenver = animalDatasetRepo.getAnimalInZoo("Denver Zoo");
+      expect(resultDenver).to.deep.equal(["Coco", "Pinguini", "BonBon"]);
+
+      const resultMiami = animalDatasetRepo.getAnimalInZoo("Miami Zoo");
+      expect(resultMiami).to.deep.equal(["Judie", "Lorie"]);
+    });
+
+    it("should return favorite foods by an animal name ", () => {
+      // Write findFoodByName function returning an array with favorite food of given animal
+      // if given Coco it should return ["banana", "potato", "bamboo shoots"]
+
+      const resultCoco = animalDatasetRepo.findFoodByName("Coco");
+      expect(resultCoco).to.deep.equal(["banana", "potato", "bamboo shoots"]);
+
+      const resultKara = animalDatasetRepo.findFoodByName("Kara");
+      expect(resultKara).to.deep.equal(["rabbit", "sheep"]);
     });
   });
 });

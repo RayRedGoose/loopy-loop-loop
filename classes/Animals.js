@@ -1,10 +1,13 @@
 const animals = require("../simple-datasets/animals");
+const bigAnimalArray = require("../array-objects/animals");
 
 class Animals {
   constructor() {
     this.simple = animals;
+    this.arrayOfObjects = bigAnimalArray;
   }
 
+  // FOR this.simple database
   anilizeWords() {}
 
   organizeByLetterNumber() {}
@@ -12,6 +15,11 @@ class Animals {
   turnToUppercase() {}
 
   organizeByFirstLetter() {}
+
+  // FOR this.arrayOfObjects database
+  getAnimalInZoo() {}
+
+  findFoodByName() {}
 }
 
 module.exports = Animals;

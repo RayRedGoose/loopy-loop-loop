@@ -1,0 +1,98 @@
+module.exports = [
+  {
+    name: "Coco",
+    animal: "gorilla",
+    age: 7,
+    zoo: {
+      name: "Denver Zoo",
+      location: "Denver, CO",
+      section: "Monkey Island",
+    },
+    favoriteFood: ["banana", "potato", "bamboo shoots"],
+    favoriteActivity: "eating bamboo shoots",
+  },
+  {
+    name: "Pinguini",
+    animal: "penguin",
+    age: 1,
+    zoo: {
+      name: "Denver Zoo",
+      location: "Denver, CO",
+      section: "Ice rocks",
+    },
+    favoriteFood: ["salmon", "squids"],
+    favoriteActivity: "swimming",
+  },
+  {
+    name: "BonBon",
+    animal: "penguin",
+    age: 5,
+    zoo: {
+      name: "Denver Zoo",
+      location: "Denver, CO",
+      section: "Ice rocks",
+    },
+    favoriteFood: ["squids", "shrimp"],
+    favoriteActivity: "sleeping on the rocks",
+  },
+  {
+    name: "Zen",
+    animal: "lion",
+    age: 3,
+    zoo: {
+      name: "San Diego Zoo",
+      location: "San Diego, CA",
+      section: "Junggles",
+    },
+    favoriteFood: ["meat steaks", "buffalo"],
+    favoriteActivity: "playing with fluffy bear",
+  },
+  {
+    name: "Kara",
+    animal: "lion",
+    age: 2,
+    zoo: {
+      name: "San Diego Zoo",
+      location: "San Diego, CA",
+      section: "Junggles",
+    },
+    favoriteFood: ["rabbit", "sheep"],
+    favoriteActivity: "running",
+  },
+  {
+    name: "Judie",
+    animal: "gorilla",
+    age: 5,
+    zoo: {
+      name: "Miami Zoo",
+      location: "Miami, FL",
+      section: "Green State",
+    },
+    favoriteFood: ["pineapple", "apple"],
+    favoriteActivity: "playing with sticks",
+  },
+  {
+    name: "Lorie",
+    animal: "bear",
+    age: 10,
+    zoo: {
+      name: "Miami Zoo",
+      location: "Miami, FL",
+      section: "Forest Point",
+    },
+    favoriteFood: ["cabbage", "salmon"],
+    favoriteActivity: "sleeping",
+  },
+  {
+    name: "Chuck",
+    animal: "bear",
+    age: 4,
+    zoo: {
+      name: "Orlando Zoo",
+      location: "Orlando, FL",
+      section: "Bear Pole",
+    },
+    favoriteFood: ["carrot", "beef"],
+    favoriteActivity: "sleeping",
+  },
+];
