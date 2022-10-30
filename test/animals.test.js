@@ -8,7 +8,7 @@ describe("Animals", () => {
     animalDatasetRepo = new Animals();
   });
 
-  describe("simple datasets", () => {
+  describe.skip("simple datasets", () => {
     it("should return a number of animal names with given letter number", () => {
       // Write anilizeWords function returning a number of names
       // that contains given letter number
@@ -94,6 +94,125 @@ describe("Animals", () => {
 
       const resultKara = animalDatasetRepo.findFoodByName("Kara");
       expect(resultKara).to.deep.equal(["rabbit", "sheep"]);
+    });
+
+    it("should organize animals by zoo", () => {
+      // Write organizeByZoo function returning an organized object
+      // with zoo names as property name and animals in array as value
+      // {..., "Orlando Zoo": ["bear Chuck"]}
+
+      const result = animalDatasetRepo.organizeByZoo();
+      expect(result).to.deep.equal({
+        "Denver Zoo": ["gorilla Coco", "penguin Pinguini", "penguin BonBon"],
+        "San Diego Zoo": ["lion Zen", "lion Kara"],
+        "Miami Zoo": ["gorilla Judie", "bear Lorie"],
+        "Orlando Zoo": ["bear Chuck"],
+      });
+    });
+
+    it("should calculate average age of animals in given zoo", () => {
+      // Write getAverageAge function returning an average age
+      // If given "Denver Zoo" it should return 9.7,
+      // because there is three animal with ages: 7, 1 and 5
+      // So average age is 4.3333... and it should be rounded
+
+      const resultDenver = animalDatasetRepo.getAverageAge("Denver Zoo");
+      expect(resultDenver).to.equal(4);
+
+      const resultOrlando = animalDatasetRepo.getAverageAge("Orlando Zoo");
+      expect(resultOrlando).to.equal(4);
+    });
+
+    it("should return messages about animals", () => {
+      // Write getMessages function returning an array
+      // with messages about animals of given type
+      // if given bear it should return the next array
+      // ["Lorie, a 10 years old bear, lives in Forest Point of Miami Zoo in Miami, FL. Lorie loves to spend all day eating cabbage, salmon and sleeping",
+      // "Chuck, a 4 years old bear, lives in Bear Pole of Orlando Zoo in Orlando, FL. Chuck loves to spend all day eating carrot, beef and sleeping"]
+
+      const resultBear = animalDatasetRepo.getMessages("bear");
+      expect(resultBear).to.deep.equal([
+        "Lorie, a 10 years old bear, lives in the Forest Point of Miami Zoo in Miami, FL. Lorie loves to spend all day eating cabbage, salmon and sleeping",
+        "Chuck, a 4 years old bear, lives in the Bear Pole of Orlando Zoo in Orlando, FL. Chuck loves to spend all day eating carrot, beef and sleeping",
+      ]);
+
+      const resultLion = animalDatasetRepo.getMessages("lion");
+      expect(resultLion).to.deep.equal([
+        "Zen, a 3 years old lion, lives in the Junggles of San Diego Zoo in San Diego, CA. Zen loves to spend all day eating meat steaks, buffalo and playing with fluffy bear",
+        "Kara, a 2 years old lion, lives in the Junggles of San Diego Zoo in San Diego, CA. Kara loves to spend all day eating rabbit, sheep and running",
+      ]);
+    });
+
+    it("should search for all animals loves given food", () => {
+      // Write findWhoLovesThis function returning string
+      // with animals who loves given food
+      // if given squids it should return
+      // "BonBon (penguin), Pinguini (penguin)"
+      // because names should be sorted alphabetically
+
+      const resultSalmon = animalDatasetRepo.findWhoLovesThis("salmon");
+      expect(resultSalmon).to.equal("Lorie (bear), Pinguini (penguin)");
+
+      const resultSquids = animalDatasetRepo.findWhoLovesThis("squids");
+      expect(resultSquids).to.equal("BonBon (penguin), Pinguini (penguin)");
+    });
+
+    it("should organize animals by type", () => {
+      // Write organizeByType function returning an organized object
+      // with animal type as property name and animals in array as value
+      // {"gorilla": [{name: "Coco", age: 7, location: "The Monkey Island of Denver Zoo (Denver, CO)"}], ....}
+
+      const result = animalDatasetRepo.organizeByType();
+      expect(result).to.deep.equal({
+        bear: [
+          {
+            name: "Lorie",
+            age: 10,
+            location: "The Forest Point of Miami Zoo (Miami, FL)",
+          },
+          {
+            name: "Chuck",
+            age: 4,
+            location: "The Bear Pole of Orlando Zoo (Orlando, FL)",
+          },
+        ],
+        gorilla: [
+          {
+            name: "Coco",
+            age: 7,
+            location: "The Monkey Island of Denver Zoo (Denver, CO)",
+          },
+          {
+            name: "Judie",
+            age: 5,
+            location: "The Green State of Miami Zoo (Miami, FL)",
+          },
+        ],
+        lion: [
+          {
+            name: "Zen",
+            age: 3,
+            location: "The Junggles of San Diego Zoo (San Diego, CA)",
+          },
+          {
+            name: "Kara",
+            age: 2,
+            location: "The Junggles of San Diego Zoo (San Diego, CA)",
+          },
+        ],
+        penguin: [
+          {
+            name: "Pinguini",
+            age: 1,
+            location: "The Ice rocks of Denver Zoo (Denver, CO)",
+          },
+          {
+            name: "BonBon",
+            age: 5,
+            location: "The Ice rocks of Denver Zoo (Denver, CO)",
+          },
+        ],
+      });
     });
   });
 });

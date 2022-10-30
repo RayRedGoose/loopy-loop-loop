@@ -20,6 +20,16 @@ class Animals {
   getAnimalInZoo() {}
 
   findFoodByName() {}
+
+  organizeByZoo() {}
+
+  getAverageAge() {}
+
+  getMessages() {}
+
+  findWhoLovesThis() {}
+
+  organizeByType() {}
 }
 
 module.exports = Animals;
